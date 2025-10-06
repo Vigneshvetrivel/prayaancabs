@@ -1,0 +1,496 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>N.V.R Tours and Travels</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --primary-dark: #004d99;
+            --primary-light: #3385d6;
+            --text-dark: #2c3e50;
+            --text-light: #ffffff;
+            --bg-light: #f8f9fa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-dark);
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--primary-color) !important;
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--text-light) !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-light) !important;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        .navbar-nav .nav-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--text-light);
+            padding: 120px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn-custom {
+            background-color: var(--text-light);
+            color: var(--primary-color);
+            padding: 12px 35px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            background-color: var(--bg-light);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            font-size: 1.1rem;
+            color: #666;
+        }
+
+        /* Service Cards */
+        .service-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            height: 100%;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,102,204,0.15);
+            border-color: var(--primary-light);
+        }
+
+        .service-card i {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .about-img {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .about-img img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        /* Booking Form */
+        .booking-section {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+            color: var(--text-light);
+        }
+
+        .booking-form {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .booking-form h3 {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            font-weight: bold;
+        }
+
+        .form-control, .form-select {
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(0,102,204,0.25);
+        }
+
+        .btn-submit {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            width: 100%;
+            transition: all 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+
+        footer h5 {
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        footer p {
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+
+        footer .social-icons {
+            margin: 20px 0;
+        }
+
+        footer .social-icons a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            margin: 0 10px;
+            transition: opacity 0.3s;
+        }
+
+        footer .social-icons a:hover {
+            opacity: 0.7;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-img img {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home"><i class="fas fa-plane"></i> NVR Tours and Travels</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#booking">Book Now</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>NVR Tours and Travels</h1>
+            <p>Your Trusted Travel Partner - Comfortable & Reliable Services</p>
+            <a href="#booking" class="btn btn-custom">Book Your Ride Now</a>
+        </div>
+    </section>
+
+    <!-- Booking Section - Moved to Top -->
+    <section id="booking" class="section booking-section">
+        <div class="container">
+            <div class="section-title">
+                <h2 style="color: white;">Book Your Journey</h2>
+                <p style="color: rgba(255,255,255,0.9);">Fill in your details and we'll connect with you on WhatsApp</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-10">
+                    <div class="booking-form">
+                        <h3><i class="fas fa-calendar-check"></i> Booking Form</h3>
+                        <form id="bookingForm">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" id="name" class="form-control" placeholder="Your Name *" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="tel" id="phone" class="form-control" placeholder="Phone Number *" required>
+                                </div>
+                            </div>
+
+                            <input type="text" id="pickup" class="form-control" placeholder="Pickup Location *" required>
+
+                            <input type="text" id="destination" class="form-control" placeholder="Where to Visit *" required>
+
+                            <input type="text" id="drop" class="form-control" placeholder="Drop Location *" required>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Pickup Date & Time *</label>
+                                    <input type="datetime-local" id="pickupDateTime" class="form-control" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label style="color: #666; font-size: 0.9rem; margin-bottom: 5px;">Drop Date & Time *</label>
+                                    <input type="datetime-local" id="dropDateTime" class="form-control" required>
+                                </div>
+                            </div>
+
+                            <input type="number" id="people" class="form-control" placeholder="Number of People *" min="1" required>
+
+                            <select id="vehicle" class="form-select" required>
+                                <option value="">Select Vehicle Type *</option>
+                                <option value="Sedan (4 Seater)">Sedan (4 Seater)</option>
+                                <option value="SUV (6-7 Seater)">SUV (6-7 Seater)</option>
+                                <option value="Tempo Traveller (12-17 Seater)">Tempo Traveller (12-17 Seater)</option>
+                                <option value="Mini Bus (20-30 Seater)">Mini Bus (20-30 Seater)</option>
+                                <option value="Luxury Coach (40+ Seater)">Luxury Coach (40+ Seater)</option>
+                            </select>
+
+                            <textarea id="message" class="form-control" rows="3" placeholder="Additional Requirements (Optional)"></textarea>
+
+                            <button type="submit" class="btn btn-submit">
+                                <i class="fab fa-whatsapp"></i> Send Booking to WhatsApp
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>Everything you need for a perfect journey</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-car"></i>
+                        <h3>Car Rentals</h3>
+                        <p>Wide range of vehicles from sedans to luxury coaches for comfortable travel experiences.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-route"></i>
+                        <h3>Outstation Trips</h3>
+                        <p>Safe and comfortable long-distance travel with experienced drivers for all destinations.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-plane-departure"></i>
+                        <h3>Airport Transfers</h3>
+                        <p>Punctual and reliable airport pickup and drop services available 24/7 for your convenience.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Group Travel</h3>
+                        <p>Special packages for corporate events, family functions, and group tours with customized vehicles.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <h3>Local Sightseeing</h3>
+                        <p>Explore local attractions with our hourly and daily rental packages at affordable rates.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <i class="fas fa-headset"></i>
+                        <h3>24/7 Support</h3>
+                        <p>Round-the-clock customer support to assist you at every step of your journey, ensuring peace of mind.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section" style="background-color: var(--bg-light);">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text flex-fill">
+                    <h2>About NVR Tours and Travels</h2>
+                    <p>NVR Tours and Travels is your trusted partner for all transportation needs. With years of experience in the travel industry, we provide reliable, comfortable, and affordable travel solutions.</p>
+                    <p>Our fleet includes a wide range of well-maintained vehicles from sedans to luxury coaches, driven by experienced and professional drivers who prioritize your safety and comfort.</p>
+                    <p>Whether it's a local trip, outstation journey, airport transfer, or group travel for events, we ensure punctual service and competitive pricing. We are committed to making your travel experience smooth and hassle-free.</p>
+                    <p><strong>Why choose NVR Tours and Travels?</strong> Professional drivers, well-maintained vehicles, 24/7 availability, transparent pricing, and customer satisfaction guaranteed.</p>
+                </div>
+                <div class="about-img">
+                    <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=800" alt="Travel">
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h5><i class="fas fa-car"></i> NVR Tours and Travels</h5>
+            <p>Your Trusted Travel Partner</p>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://wa.me/919791816204"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p style="margin-top: 20px; opacity: 0.8;">&copy; 2025 NVR Tours and Travels. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.getElementById('bookingForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const phone = document.getElementById('phone').value;
+            const pickup = document.getElementById('pickup').value;
+            const destination = document.getElementById('destination').value;
+            const pickupDateTime = document.getElementById('pickupDateTime').value;
+            const dropDateTime = document.getElementById('dropDateTime').value;
+            const people = document.getElementById('people').value;
+            const vehicle = document.getElementById('vehicle').value;
+            const message = document.getElementById('message').value;
+
+            const whatsappMessage = `*New Booking Request - NVR Tours and Travels*%0A%0A*Name:* ${name}%0A*Phone:* ${phone}%0A*Pickup Location:* ${pickup}%0A*Drop/Visit Location:* ${destination}%0A*Pickup Date & Time:* ${pickupDateTime}%0A*Drop Date & Time:* ${dropDateTime}%0A*Number of People:* ${people}%0A*Vehicle Type:* ${vehicle}%0A*Additional Requirements:* ${message || 'None'}`;
+
+            const whatsappNumber = '919791816204';
+
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+
+            window.open(whatsappURL, '_blank');
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
