@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Ride - Prayaan Cabs</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="images/logo.png" alt="Prayaan Logo" class="brand-logo" style="height:100px;">
+                <h1 class="brand-name">Prayaan Cabs</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="destinations.html">Destinations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="booking.html">Book Now</a></li>
+                    <li class="nav-item"><a class="nav-link btn-vendor" href="vendor.html">Vendor Registration</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Quick Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Book Your Ride</h2>
+                <p>Quick and easy online car booking in minutes</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="booking-form-card">
+                        <form id="bookingForm">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">Full Name</label>
+                                    <input type="text" class="form-control" id="customerName" placeholder="Enter your name" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Phone Number</label>
+                                    <input type="tel" class="form-control" id="customerPhone" placeholder="Enter phone number" pattern="[0-9]{10}" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Pickup Location</label>
+                                    <input type="text" class="form-control" id="pickupLocation" placeholder="Enter pickup address" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Drop Location</label>
+                                    <input type="text" class="form-control" id="dropLocation" placeholder="Enter drop address" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Pickup Date & Time</label>
+                                    <input type="datetime-local" class="form-control" id="pickupDateTime" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Return Date & Time</label>
+                                    <input type="datetime-local" class="form-control" id="returnDateTime" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Number of Passengers</label>
+                                    <input type="number" class="form-control" id="passengers" placeholder="Number of people" min="1" max="50" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Vehicle Type</label>
+                                    <select class="form-select" id="vehicleType" required>
+                                        <option value="">Select vehicle</option>
+                                        <option value="Sedan (4 Seater)">Sedan (4 Seater)</option>
+                                        <option value="SUV (6-7 Seater)">SUV (6-7 Seater)</option>
+                                        <option value="Innova (7 Seater)">Innova (7 Seater)</option>
+                                        <option value="Tempo Traveller (12-17 Seater)">Tempo Traveller (12-17 Seater)</option>
+                                        <option value="Mini Bus (20-30 Seater)">Mini Bus (20-30 Seater)</option>
+                                        <option value="Luxury Coach (40+ Seater)">Luxury Coach (40+ Seater)</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Special Requirements (Optional)</label>
+                                    <textarea class="form-control" id="specialRequirements" rows="3" placeholder="Any specific requirements or destinations to visit"></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg w-100">
+                                        <i class="fab fa-whatsapp me-2"></i>Send Booking Request via WhatsApp
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h5><i class="fas fa-car"></i> Prayaan Cabs</h5>
+                    <p>Premium car rental services across South India. Reliable, affordable, and professional.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://wa.me/919500530043"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="destinations.html">Destinations</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <h5>Contact Us</h5>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-phone"></i> +91 9500530043</li>
+                        <li><i class="fas fa-envelope"></i>prayaancabs@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 315 Manikam Nagar <br> Irugur <br> Coimbatore-641003</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Prayaan Cabs. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
